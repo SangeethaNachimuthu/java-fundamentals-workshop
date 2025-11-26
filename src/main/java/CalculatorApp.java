@@ -22,11 +22,15 @@ public class CalculatorApp {
         int result;
         do {
 
-            System.out.println("Enter number1: ");
-            int num1 = scan.nextInt();
+           /* System.out.println("Enter number1: ");
+            int num1 = scan.nextInt();*/
 
-            System.out.println("Enter number2: ");
-            int num2 = scan.nextInt();
+            int num1 = getInput(scan);
+
+            /*System.out.println("Enter number2: ");
+            int num2 = scan.nextInt();*/
+
+            int num2 = getInput(scan);
 
             System.out.println("Choose any one of the operations to perform:");
             System.out.println("Enter A for Addition, S for Subtraction, M for Multiplication" +
@@ -62,6 +66,27 @@ public class CalculatorApp {
             }
 
         } while (!desiredOperation.equalsIgnoreCase("E"));
+    }
+
+    /*
+    This method used to get the input number from the user.
+    Also displays the error message if the user enters non-number characters.
+     */
+    public static int getInput(Scanner scan) {
+        int num = 0;
+        boolean validInput = false;
+        while (!validInput) {
+            try{
+                System.out.println("Enter number: ");
+                num = scan.nextInt();
+                scan.nextLine();
+                validInput = true;
+            } catch(InputMismatchException e){
+                System.out.println("Enter a valid number.");
+                scan.nextLine();
+            }
+        }
+        return num;
     }
 
     /*
