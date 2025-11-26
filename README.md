@@ -1,5 +1,5 @@
 Pseudocode
-
+````
 START
     REPEAT
         READ number1
@@ -15,3 +15,4 @@ START
         END SWITCH
     END REPEAT
 END
+
