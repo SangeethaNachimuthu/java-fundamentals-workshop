@@ -9,14 +9,16 @@ public class CalculatorApp {
         System.out.println("=======================");
         System.out.println("The Calculator App performs Addition, Subtraction, " +
                 "Multiplication and Division operations.");
-        calculatorApp();
+
+        CalculatorApp calculatorApp = new CalculatorApp();
+        calculatorApp.calculatorApp();
     }
 
     /*
     This method performs Addition, Subtraction, Multiplication and
     Division operations by getting the inputs from the user.
      */
-    public static void calculatorApp() {
+    public void calculatorApp() {
         Scanner scan = new Scanner(System.in);
         String desiredOperation;
         int result;
@@ -72,7 +74,7 @@ public class CalculatorApp {
     This method used to get the input number from the user.
     Also displays the error message if the user enters non-number characters.
      */
-    public static int getInput(Scanner scan) {
+    public int getInput(Scanner scan) {
         int num = 0;
         boolean validInput = false;
         while (!validInput) {
@@ -92,28 +94,28 @@ public class CalculatorApp {
     /*
     This method returns the sum of two numbers.
      */
-    public static int addition(int num1, int num2) {
+    public int addition(int num1, int num2) {
         return (num1 + num2);
     }
 
     /*
     This method returns the subtraction of two numbers.
      */
-    public static int subtraction(int num1, int num2) {
+    public int subtraction(int num1, int num2) {
         return (num1 - num2);
     }
 
     /*
     This method returns the multiplication of two numbers.
      */
-    public static int multiplication(int num1, int num2) {
+    public int multiplication(int num1, int num2) {
         return (num1 * num2);
     }
 
     /*
     This method returns the division of two numbers.
      */
-    public static int division(int num1, int num2) {
+    public int division(int num1, int num2) {
         return (num1 / num2);
     }
 }
