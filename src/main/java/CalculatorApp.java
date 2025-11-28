@@ -1,6 +1,12 @@
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/*
+This Basic Calculator, performs the basic arithmetic operations for two operands.
+ */
 public class CalculatorApp {
 
     public static void main(String[] args) {
@@ -8,7 +14,7 @@ public class CalculatorApp {
         System.out.println("Calculator Application");
         System.out.println("=======================");
         System.out.println("The Calculator App performs Addition, Subtraction, " +
-                "Multiplication and Division operations.");
+                "Multiplication, Division and Percentage operations.");
 
         CalculatorApp calculatorApp = new CalculatorApp();
         calculatorApp.calculatorApp();
@@ -36,7 +42,7 @@ public class CalculatorApp {
 
             System.out.println("Choose any one of the operations to perform:");
             System.out.println("Enter A for Addition, S for Subtraction, M for Multiplication" +
-                    " D for Division and E for Exit.");
+                    " D for Division, P for Percentage and E for Exit.");
             desiredOperation = scan.next().toUpperCase();
 
             switch (desiredOperation) {
@@ -59,6 +65,9 @@ public class CalculatorApp {
                         result = division(num1, num2);
                         System.out.println("Division: " + num1 + "/" + num2 + " = " + result);
                     }
+                    break;
+                case "P":
+                    percentage(num1);
                     break;
                 case "E":
                     System.out.println("Thanks for using the Calculator App.");
@@ -117,5 +126,13 @@ public class CalculatorApp {
      */
     public int division(int num1, int num2) {
         return (num1 / num2);
+    }
+
+    /*
+    This method returns the percentage of a number.
+     */
+    public void percentage(int num) {
+        double result = ((double) num /100);
+        System.out.println("The percentage of " +num+ " is "+result);
     }
 }
